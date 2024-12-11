@@ -9,6 +9,7 @@ const form = document.querySelector("form")
 const amount = document.getElementById("amount")
 const currency = document.getElementById("currency")
 const footer = document.querySelector("main footer")
+const description = document.getElementById("description")
 
 //manipulando o input amount para recerber somente números. 
 amount.addEventListener("input", ()=>{
@@ -36,8 +37,13 @@ form.onsubmit = (event) =>{
 //Função para converter a moeda.
     function covertCurrency(amount, price, sympol){
         try{
+            //ixibindo a cotação da moeda selecionada.
+            description.textContent = `${sympol} 1 = ${price}`
+
             //Aplica a classe que exibe o footer para mostrar o resultado
             footer.classList.add("show-result")
+
+
         }catch(error){
             //Remove a classe do footer ocultando ele.
             footer.classList.remove("show-result")
