@@ -52,3 +52,12 @@ form.onsubmit = (event) =>{
             alert('Não foi possivel converter. Tente novamente mais tarde')
         }
     }
+
+    //formata a moeda em real brasileiro
+    function formatCurrencyBRL(value){
+        //Converte para número para atualizar o toLocalString para formatar no padrão BRL  (R$ 00,00).
+        return Number(value).toLocaleString("pt-BR", {
+            style: "currency", 
+            currency: "BRL",
+        })
+    }   
